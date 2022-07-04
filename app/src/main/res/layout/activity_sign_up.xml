@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/background2"
+    tools:context=".SignUpActivity">
+
+    <EditText
+        android:id="@+id/edtSuName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/su_name"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textColorHint="@color/deepRed"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/edtSuEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtSuName"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/su_email_address"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textColorHint="@color/deepRed"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/edtSuPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtSuEmail"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/su_password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textColorHint="@color/deepRed"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/edtSuConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtSuPassword"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/su_confirm_password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textColorHint="@color/deepRed"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <com.santalu.maskara.widget.MaskEditText
+        android:id="@+id/edtSuPhone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtSuConfirmPassword"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/su_phone_number"
+        android:inputType="phone"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textColorHint="@color/deepRed"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:mask="+880 ____ ______"
+        app:maskCharacter="_"
+        app:maskStyle="completable" />
+
+    <Button
+        android:id="@+id/btnSuSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtSuPhone"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/whitetransparent"
+        android:text="@string/su_sign_up"
+        android:textAllCaps="false"
+        android:textColor="#86F406"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSuCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSuSignUp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/whitetransparent"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="#D21D26"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnSuLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSuCancel"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/whitetransparent"
+        android:text="@string/su_login"
+        android:textAllCaps="false"
+        android:textColor="@color/deepRed"
+        android:textSize="20sp" />
+
+</RelativeLayout>

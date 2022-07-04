@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:padding="10dp"
+    tools:context=".LoginActivity">
+
+    <EditText
+        android:id="@+id/edtLgEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/li_email_address"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="#201377"
+        android:textColorHint="#201377"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/edtLgPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edtLgEmail"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_black"
+        android:hint="@string/li_password"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:textAllCaps="false"
+        android:textColor="#201377"
+        android:textColorHint="#201377"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnLgLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtLgPassword"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/whitetransparent"
+        android:text="@string/li_login"
+        android:textAllCaps="false"
+        android:textColor="#D21D26"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnLgSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLgLogin"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/whitetransparent"
+        android:text="@string/li_cancel"
+        android:textAllCaps="false"
+        android:textColor="#D21D26"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">User BTBS</string>
+    <string name="li_email_address">Email Address</string>
+    <string name="li_password">Password</string>
+    <string name="li_login">Login</string>
+    <string name="li_cancel">Sign Up</string>
+    <string name="su_name">Name</string>
+    <string name="su_email_address">Email Address</string>
+    <string name="su_password">Password</string>
+    <string name="su_confirm_password">Confirm Password</string>
+    <string name="su_phone_number">Phone Number</string>
+    <string name="su_sign_up">Sign Up</string>
+    <string name="su_login">Login</string>
+</resources>
