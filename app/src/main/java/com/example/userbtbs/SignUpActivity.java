@@ -23,7 +23,6 @@ import java.util.HashMap;
 
 public class SignUpActivity extends AppCompatActivity {
     private Button btnSignUp, btnCancel, btnLogIn;
-
     private EditText edtName, edtEmail, edtPassowrd, edtPhone, edtConPass;
     private String Name, Email, Password, Phone, emaillg, passwordlg;
     private FirebaseAuth mauth;
