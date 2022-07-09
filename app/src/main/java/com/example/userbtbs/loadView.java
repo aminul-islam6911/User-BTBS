@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 public class loadView extends RecyclerView.ViewHolder {
     View mView;
     TextView textDate, textTimeStart, textTimeEnd, textLocationPinStart, textLocationPinEnd, textBusno, textSeatType, ticketPrice;
