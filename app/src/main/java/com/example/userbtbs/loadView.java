@@ -16,15 +16,15 @@ public class loadView extends RecyclerView.ViewHolder {
     public loadView(@NonNull View itemView) {
         super(itemView);
         mView = itemView;
-        textDate = mView.findViewById(R.id.blDate);
-        textTimeStart = mView.findViewById(R.id.blLocatioionStartTime);
-        textTimeEnd = mView.findViewById(R.id.blLocationEndTime);
-        textLocationPinStart = mView.findViewById(R.id.blLocationStart);
-        textLocationPinEnd = mView.findViewById(R.id.blLocationArrival);
-        textBusno = mView.findViewById(R.id.blBusId);
-        textSeatType = mView.findViewById(R.id.blSeatType);
-        blCard = mView.findViewById(R.id.loadbusview);
-        ticketPrice = mView.findViewById(R.id.blticket_price);
+        textDate = mView.findViewById(R.id.date);
+        textTimeStart = mView.findViewById(R.id.startingTime);
+        textTimeEnd = mView.findViewById(R.id.arrivalTime);
+        textLocationPinStart = mView.findViewById(R.id.starting);
+        textLocationPinEnd = mView.findViewById(R.id.destination);
+        textBusno = mView.findViewById(R.id.busNo);
+        textSeatType = mView.findViewById(R.id.busType);
+        blCard = mView.findViewById(R.id.cardView);
+        ticketPrice = mView.findViewById(R.id.ticketPrice);
     }
 
 
@@ -53,7 +53,7 @@ public class loadView extends RecyclerView.ViewHolder {
     }
 
     public void settextSeatType(String TextSeatType) {
-        textSeatType.setText("Seat Type: " + TextSeatType);
+        textSeatType.setText("Bus Type: " + TextSeatType);
     }
 
     public void settextPrice(String TextPrice) {

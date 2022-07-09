@@ -1,9 +1,5 @@
 package com.example.userbtbs;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +11,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userbtbs.Interface.IFirebaseLoadDone;
 import com.example.userbtbs.Model.IDs;
@@ -66,14 +66,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
         Confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!ArrivalAd.equals(DepartureAd)) {
-                    if (!ArrivalAd.isEmpty() && !DepartureAd.isEmpty()) {
-                        Searching();
-                    } else {
-                        Toast.makeText(MainActivity.this, "Please enter date", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
+                if (ArrivalAd.equals(DepartureAd)) {
                     Toast.makeText(MainActivity.this, "Location is repeated", Toast.LENGTH_SHORT).show();
+                } else {
+                    Searching();
+                    Finaldate = "Empty";
+                    MN_Select_date.setText("Select Date");
                 }
             }
         });
@@ -234,12 +232,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
         dayfinal = dayOfMonth;
         Finaldate = ("Date:" + dayfinal + "_" + monthfinal + "_" + yearfinal);
         MN_Select_date.setText(Finaldate);
-        dbDate = Finaldate + DepartureAd + ArrivalAd;
+        dbDate = Finaldate + " " + DepartureAd + " " + ArrivalAd;
     }
 
     public void Searching() {
         if (Finaldate.equals("Empty")) {
-            dbEveryday = "Runs Everyday" + DepartureAd + ArrivalAd;
+            dbEveryday = "Runs Everyday " + DepartureAd + " " + ArrivalAd;
             loadbus = FirebaseDatabase.getInstance().getReference().child("Buses").child(dbEveryday);
             FirebaseRecyclerAdapter<BusModel, loadView> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<BusModel, loadView>(
                     BusModel.class,
@@ -253,38 +251,38 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
                     loadbus.child(Blid).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            final String ArrivalLoc = dataSnapshot.child("ArrivalLoc").getValue().toString();
+                            final String Destination = dataSnapshot.child("Destination").getValue().toString();
                             final String ArrivalTime = dataSnapshot.child("ArrivalTime").getValue().toString();
-                            final String DepartureLoc = dataSnapshot.child("DepartureLoc").getValue().toString();
+                            final String Start = dataSnapshot.child("Start").getValue().toString();
                             final String BusNo = dataSnapshot.child("BusNo").getValue().toString();
                             final String Date = dataSnapshot.child("Date").getValue().toString();
-                            final String DepartureTime = dataSnapshot.child("DepartureTime").getValue().toString();
-                            final String TypeSit = dataSnapshot.child("TypeSit").getValue().toString();
+                            final String StartingTime = dataSnapshot.child("StartingTime").getValue().toString();
+                            final String BusType = dataSnapshot.child("BusType").getValue().toString();
                             final String NoOfSit = dataSnapshot.child("NumberOfSeat").getValue().toString();
-                            final String Ticket_price = dataSnapshot.child("TicketPrice").getValue().toString();
+                            final String Ticketprice = dataSnapshot.child("TicketPrice").getValue().toString();
 
                             viewHolder.settextBusno(BusNo);
                             viewHolder.settextDate(Date);
                             viewHolder.settextLocationEnd(ArrivalAd);
                             viewHolder.settextLocationStart(DepartureAd);
-                            viewHolder.settextSeatType(TypeSit);
-                            viewHolder.settextTimeStart(DepartureTime);
+                            viewHolder.settextSeatType(BusType);
+                            viewHolder.settextTimeStart(StartingTime);
                             viewHolder.setTextTimeEnd(ArrivalTime);
-                            viewHolder.settextPrice(Ticket_price);
+                            viewHolder.settextPrice(Ticketprice);
 
                             viewHolder.blCard.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     Intent in = new Intent(MainActivity.this, BookTicket.class);
                                     in.putExtra("ArrivalTime", ArrivalTime);
-                                    in.putExtra("DepartureTime", DepartureTime);
+                                    in.putExtra("DepartureTime", StartingTime);
                                     in.putExtra("BusNo", BusNo);
                                     in.putExtra("NumberOfSeat", NoOfSit);
-                                    in.putExtra("TypeSit", TypeSit);
-                                    in.putExtra("DepartureAd", DepartureLoc);
-                                    in.putExtra("ArrivalAd", ArrivalLoc);
+                                    in.putExtra("TypeSit", BusType);
+                                    in.putExtra("DepartureAd", Start);
+                                    in.putExtra("ArrivalAd", Destination);
                                     in.putExtra("Date", Finaldate);
-                                    in.putExtra("Price", Ticket_price);
+                                    in.putExtra("Price", Ticketprice);
                                     startActivity(in);
                                 }
                             });
@@ -300,8 +298,6 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
             MNblload.setAdapter(firebaseRecyclerAdapter);
 
         } else {
-            Finaldate = ("Date:" + dayfinal + "_" + monthfinal + "_" + yearfinal);
-            dbDate = Finaldate + DepartureAd + ArrivalAd;
             loadbusSp = FirebaseDatabase.getInstance().getReference().child("Buses").child(dbDate);
             FirebaseRecyclerAdapter<BusModel, loadView> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<BusModel, loadView>(
                     BusModel.class,
@@ -317,38 +313,38 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
                     loadbusSp.child(Blid).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            final String ArrivalLoc = dataSnapshot.child("ArrivalLoc").getValue().toString();
+                            final String Destination = dataSnapshot.child("Destination").getValue().toString();
                             final String ArrivalTime = dataSnapshot.child("ArrivalTime").getValue().toString();
-                            final String DepartureLoc = dataSnapshot.child("DepartureLoc").getValue().toString();
+                            final String Start = dataSnapshot.child("Start").getValue().toString();
                             final String BusNo = dataSnapshot.child("BusNo").getValue().toString();
                             final String Date = dataSnapshot.child("Date").getValue().toString();
-                            final String DepartureTime = dataSnapshot.child("DepartureTime").getValue().toString();
-                            final String TypeSit = dataSnapshot.child("TypeSit").getValue().toString();
+                            final String StartingTime = dataSnapshot.child("StartingTime").getValue().toString();
+                            final String BusType = dataSnapshot.child("BusType").getValue().toString();
                             final String NoOfSit = dataSnapshot.child("NumberOfSeat").getValue().toString();
-                            final String Ticket_price = dataSnapshot.child("TicketPrice").getValue().toString();
+                            final String Ticketprice = dataSnapshot.child("TicketPrice").getValue().toString();
 
                             viewHolder.settextBusno(BusNo);
                             viewHolder.settextDate(Date);
                             viewHolder.settextLocationEnd(ArrivalAd);
                             viewHolder.settextLocationStart(DepartureAd);
-                            viewHolder.settextSeatType(TypeSit);
-                            viewHolder.settextTimeStart(DepartureTime);
+                            viewHolder.settextSeatType(BusType);
+                            viewHolder.settextTimeStart(StartingTime);
                             viewHolder.setTextTimeEnd(ArrivalTime);
-                            viewHolder.settextPrice(Ticket_price);
+                            viewHolder.settextPrice(Ticketprice);
 
                             viewHolder.blCard.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     Intent in = new Intent(MainActivity.this, BookTicket.class);
                                     in.putExtra("ArrivalTime", ArrivalTime);
-                                    in.putExtra("DepartureTime", DepartureTime);
+                                    in.putExtra("DepartureTime", StartingTime);
                                     in.putExtra("BusNo", BusNo);
                                     in.putExtra("NumberOfSeat", NoOfSit);
-                                    in.putExtra("TypeSit", TypeSit);
-                                    in.putExtra("DepartureAd", DepartureLoc);
-                                    in.putExtra("ArrivalAd", ArrivalLoc);
+                                    in.putExtra("TypeSit", BusType);
+                                    in.putExtra("DepartureAd", Start);
+                                    in.putExtra("ArrivalAd", Destination);
                                     in.putExtra("Date", Finaldate);
-                                    in.putExtra("Price", Ticket_price);
+                                    in.putExtra("Price", Ticketprice);
                                     startActivity(in);
                                 }
                             });
