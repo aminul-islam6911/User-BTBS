@@ -79,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity {
                 Name = edtName.getText().toString();
                 String STConfirm_Password = edtConPass.getText().toString();
                 if (STConfirm_Password.equals(Password)) {
-                    if (!Phone.isEmpty() && !Password.isEmpty() && !Email.isEmpty()) {
+                    if (!Phone.isEmpty() && !Password.isEmpty() && !Name.isEmpty() && !Email.isEmpty()) {
                         progressDialog.setTitle("Registering");
                         progressDialog.setCancelable(false);
                         progressDialog.show();
