@@ -1,18 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/MN_Name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/redtransparent"
+        android:paddingStart="20dp"
+        android:paddingEnd="0dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        android:textStyle="italic" />
+
+    <RelativeLayout
+        android:id="@+id/SpinnerLayouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MN_Name"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/MN_TextLcStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Select Starting Location"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/MN_Location_Place_Start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MN_TextLcStart"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="150dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/MN_TextLcEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MN_Location_Place_Start"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Select Destination Location"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/MN_Location_Place_Destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MN_TextLcEnd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dtsrbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SpinnerLayouts">
+
+        <Button
+            android:id="@+id/MN_Select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_black"
+            android:text="Select Date"
+            android:textAllCaps="false"
+            android:textColor="#0C0101"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/MN_Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/MN_Select_date"
+            android:background="@drawable/button_black"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/MNblload"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/dtsrbutton"
+        android:layout_marginTop="15dp" />
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/MNblload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/MN_Signout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redtransparent"
+            android:text="SignOut"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/MN_Ticekets_booked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/MN_Signout"
+            android:background="@drawable/redtransparent"
+            android:text="Tickets"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

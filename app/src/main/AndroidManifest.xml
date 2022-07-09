@@ -14,8 +14,11 @@
         android:theme="@style/Theme.UserBTBS"
         tools:targetApi="31">
         <activity
+            android:name=".Ticekets_booked"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
