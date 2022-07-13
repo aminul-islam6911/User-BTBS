@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:351028530228:android:a69203e4843a50fdab4e61",
+        "mobilesdk_app_id": "1:351028530228:android:94ca8ff3166e4290ab4e61",
         "android_client_info": {
           "package_name": "com.example.adminbtbs"
         }
@@ -37,7 +37,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:351028530228:android:dedcff747339448eab4e61",
+        "mobilesdk_app_id": "1:351028530228:android:1e99431a05145a2aab4e61",
         "android_client_info": {
           "package_name": "com.example.userbtbs"
         }

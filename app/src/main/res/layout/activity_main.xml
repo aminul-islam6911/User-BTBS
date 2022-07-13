@@ -10,6 +10,7 @@
         android:id="@+id/MN_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="@drawable/redtransparent"
         android:paddingStart="20dp"
         android:paddingEnd="0dp"
@@ -31,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="Select Starting Location"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/MN_Location_Place_Start"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="Select Destination Location"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -89,12 +90,12 @@
             android:id="@+id/MN_Select_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_black"
             android:text="Select Date"
             android:textAllCaps="false"
-            android:textColor="#0C0101"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <Button
@@ -102,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/MN_Select_date"
             android:background="@drawable/button_black"
@@ -117,14 +118,14 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@+id/dtsrbutton"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="10dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/MNblload"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/MN_Signout"
