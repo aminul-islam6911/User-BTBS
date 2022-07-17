@@ -275,13 +275,12 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadDone
                                 public void onClick(View view) {
                                     Intent in = new Intent(MainActivity.this, BookTicket.class);
                                     in.putExtra("ArrivalTime", ArrivalTime);
-                                    in.putExtra("DepartureTime", StartingTime);
+                                    in.putExtra("StartingTime", StartingTime);
                                     in.putExtra("BusNo", BusNo);
                                     in.putExtra("NumberOfSeat", NoOfSit);
-                                    in.putExtra("TypeSit", BusType);
-                                    in.putExtra("DepartureAd", Start);
-                                    in.putExtra("ArrivalAd", Destination);
-                                    in.putExtra("Date", Finaldate);
+                                    in.putExtra("BusType", BusType);
+                                    in.putExtra("Starting", Start);
+                                    in.putExtra("Destination", Destination);
                                     in.putExtra("Price", Ticketprice);
                                     startActivity(in);
                                 }

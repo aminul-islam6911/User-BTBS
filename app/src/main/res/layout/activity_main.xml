@@ -10,7 +10,7 @@
         android:id="@+id/MN_Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/redtransparent"
         android:paddingStart="20dp"
         android:paddingEnd="0dp"
@@ -83,19 +83,22 @@
         android:id="@+id/dtsrbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/SpinnerLayouts">
+        android:layout_below="@+id/SpinnerLayouts"
+        android:layout_centerHorizontal="true">
 
         <Button
             android:id="@+id/MN_Select_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/button_black"
+            android:background="@drawable/transparentred"
+            android:padding="5dp"
             android:text="Select Date"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <Button
@@ -106,7 +109,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:layout_toEndOf="@+id/MN_Select_date"
-            android:background="@drawable/button_black"
+            android:background="@drawable/transparentred"
+            android:padding="5dp"
             android:text="Search"
             android:textAllCaps="false"
             android:textSize="20sp" />
@@ -116,9 +120,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MNblload"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:layout_below="@+id/dtsrbutton"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -132,10 +136,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/redtransparent"
+            android:padding="5dp"
             android:text="SignOut"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="#3F51B5"
             android:textSize="25sp"
             android:textStyle="italic" />
 
@@ -146,10 +151,11 @@
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/MN_Signout"
             android:background="@drawable/redtransparent"
+            android:padding="5dp"
             android:text="Tickets"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="#3F51B5"
             android:textSize="25sp"
             android:textStyle="italic" />
 
